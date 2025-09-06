@@ -79,4 +79,23 @@ class LinkedList {
     curr.next = curr.next.next;
     this.size--;
   }
+
+  deleteElementWithValue(value)
+  {
+    if (this.head.val == value) {
+        this.head.next = this.head.next.next;
+    } 
+
+    let curr = this.head;
+    let prev = null;
+    while (curr) {
+        if (curr.val == value) {
+            prev.next = curr.next;
+            return this.head;
+        } 
+        prev = curr;
+        curr = curr.next;
+    }
+    return this.head;
+  }
 }
