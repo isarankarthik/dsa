@@ -98,4 +98,25 @@ class LinkedList {
     }
     return this.head;
   }
+
+  insertBeforeTheValue(val, X)
+  {
+    let node = new Node(val);
+    if (this.head.val == X) {
+        node.next = this.head;
+        this.head = node;
+        return this.head;
+    }
+    let curr = this.head;
+    let prev = null;
+    while (curr) {
+        if (curr.val == X) {
+            prev.next = node;
+            node.next = curr;
+        } 
+        prev = curr;
+        curr = curr.next;
+    }
+    return this.head;
+  }
 }
