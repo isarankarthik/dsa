@@ -6,7 +6,7 @@
 
 function jewelsAndStones(jewel, stones)
 {
-    let jewelSet = new Set(jewels);
+    let jewelSet = new Set(jewel);
     let jewelCount = 0;
     for (let i = 0; i<stones.length; i++) 
     {
