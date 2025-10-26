@@ -23,3 +23,22 @@ function validAnagram(s,t)
     return true;
     
 }
+
+function optimisedValidAnagram(s, t)
+{
+    if (s.length !== t.length) return false;
+
+    let sMap = new Map();
+
+    for (let ch of s)
+    {
+        sMap.set(ch, (sMap.get(ch) || 0) +1);
+    }
+
+    for (let ci of t) 
+    {
+        if (!sMap.has(ci) || sMap.get(ci) === 0) return false;
+        sMap.set(ci, sMap.get(ci)-1);
+    }
+    return true;
+}
