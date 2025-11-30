@@ -2,39 +2,32 @@
  * @param {string[]} tokens
  * @return {number}
  */
-
-function evaluateReversePolishNotation(tokens)
-{
-    let arithmeticOperation = new Set(["+", "-", "*", "/"]);
-    let stack = [];
-    for (let i = 0; i<tokens.length; i++)
-    {
-        if (!arithmeticOperation[i].has(tokens[i]))
-        {
-            stack.push(Number(tokens[i]));
-        } else {
-            let a = stack.pop();
-            let b = stack.pop();
-            let result = 0;
-            switch (tokens[i])
-            {
-                case "+":
-                    result = Math.floor(b) + Math.floor(a);
-                    break;
-                case "-": 
-                    result = Math.floor(b) - Math.floor(a);
-                    break;
-                case "*": 
-                    result = Math.floor(b) * Math.floor(a);
-                    break;
-                
-                case "/": 
-                    result = Math.floor(b) / Math.floor(a);
-                    result = result < 0 ? Math.ceil(result) : Math.floor(result);
-                    break;
-            }
-            stack.push(result);
-        }
+var evalRPN = function (tokens) {
+  let stack = [];
+  let operationSet = new Set(["+", "-", "*", "/"]);
+  for (let i = 0; i < tokens.length; i++) {
+    if (!operationSet.has(tokens[i])) {
+      stack.push(Number(tokens[i]));
+    } else {
+      let result = 0;
+      let a = stack.pop();
+      let b = stack.pop();
+      switch (tokens[i]) {
+        case "+":
+          result = Math.floor(b) + Math.floor(a);
+          break;
+        case "-":
+          result = Math.floor(b) - Math.floor(a);
+          break;
+        case "*":
+          result = Math.floor(b) * Math.floor(a);
+          break;
+        case "/":
+          result = Math.trunc(b / a);
+          break;
+      }
+      stack.push(Number(result));
     }
-    return stack.pop();
-}
+  }
+  return stack.pop();
+};
