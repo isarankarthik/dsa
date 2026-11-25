@@ -1,4 +1,4 @@
-public class Main
+public class InsertionSort
 {
     public void insertionSort(int[] arr, int n) 
     {
@@ -18,7 +18,7 @@ public class Main
         
     }
 	public static void main(String[] args) {
-		Main obj = new Main();
+		InsertionSort obj = new InsertionSort();
 		int[] arr = {13,46,24,52,20,9};
 		int length = arr.length;
 		obj.insertionSort(arr,length);

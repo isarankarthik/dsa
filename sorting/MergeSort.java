@@ -1,4 +1,6 @@
-class Solution {
+import java.util.ArrayList;
+
+public class MergeSort {
     private static void merge(int[] arr, int low, int mid, int high) {
         ArrayList<Integer> temp = new ArrayList<>(); // temporary array
         int left = low;      // starting index of left half of arr

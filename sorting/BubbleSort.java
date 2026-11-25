@@ -1,6 +1,6 @@
 //This is the code for the bubble sort which checks the adjacent element and the largest element goes to the last of the array.
 
-public class Main
+public class BubbleSort
 {
     public void bubbleSort(int[] arr, int n)
     {
@@ -21,7 +21,7 @@ public class Main
         }
     }
 	public static void main(String[] args) {
-		Main obj = new Main();
+		BubbleSort obj = new BubbleSort();
 		int[] arr = {13,46,24,52,20,9};
 		int length = arr.length;
 		obj.bubbleSort(arr,length);
