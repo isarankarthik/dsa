@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 // this is just the inbuilt array list, just for the learning purposes.
 
@@ -66,12 +67,19 @@ public class CustomArrayList {
         while (itr.hasNext())
         {
             String name = itr.next();
-            if (name == "Ramesh") {
-                itr.remove();
-            }
+            System.out.println(name);
+            // if (name == "Ramesh") {
+            //     itr.remove();
+            // } 
         }
 
-        System.out.println(peopleName);
+        // printing from the reverse of the list using List Iterator
+
+        ListIterator<String> listItr = peopleName.listIterator(peopleName.size());
+        while (listItr.hasPrevious()) {
+            String name = listItr.previous();
+            System.out.println(name);
+        }
 
     }
 }
